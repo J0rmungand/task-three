@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans&subset=cyrillic');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  position: relative;
+  background-color: white;
+  min-height: 100%;
+  min-width: 960px;
+  margin: 0px;
+}
+
+header {
+  text-align: center;
+  width: 100%;
+}
+
+.search-form {
+  max-width: 400px;
+  margin: 50px auto;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+}
+
+input.search-input {
+  margin: 0;
+  text-align: center;
+  border: 10px solid #F7F7F7;
+  font-size: 40px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+}
+
+input.search-input:focus {
+  outline: none;
+}
+
+input.search-input:focus + .suggestions {
+  opacity: 1;
+}
+
+.suggestions {
+  max-height: calc(61px * 5);
+  overflow-x: auto;
+  opacity: 0;
+  transition: 0.7s;
+}
+
+.suggestions::-webkit-scrollbar-track {
+  border-radius: 4px;
+}
+
+.suggestions::-webkit-scrollbar {
+  width: 7px;
+}
+
+.suggestions::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: #f0f2f5;
+}
+
+.suggestions:hover::-webkit-scrollbar-thumb {
+  background: #6a7d9b;
+}
+
+.suggestions li {
+  background: white;
+  list-style: none;
+  border-bottom: 1px solid #D8D8D8;
+  border-left: 1px solid #D8D8D8;
+  border-right: 1px solid #D8D8D8;
+  margin: 0;
+  padding: 20px;
+  transition: background 0.2s;
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+}
+
+.highlight {
+  background-color: #fbc93d;
+}
+
