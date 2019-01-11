@@ -3,14 +3,12 @@ const endpoint = 'https://jsonplaceholder.typicode.com/users';
 const users = [];
 
 var ifFind = '';
-// fetch grabs endpoint - at this point a promise and generates readablestream
 fetch(endpoint)
   .then(blob => blob.json())
   .then(data => users.push(...data));
 
 function findMatches(keyword, users) {
   return users.filter(place => {
-    // does city or state match? use paramater regex
     const regex = new RegExp(keyword, 'igy');
     
     return place.name.match(regex)
